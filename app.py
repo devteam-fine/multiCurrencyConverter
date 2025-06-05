@@ -1,3 +1,5 @@
+
+
 from flask import Flask, render_template, request, jsonify
 import requests
 import json
@@ -14,6 +16,10 @@ CORS(app)  # Enable CORS for all routes
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/favorite')
+def favorite():
+    return render_template('favorite.html')
 
 # API endpoint to fetch current exchange rates
 @app.route('/api/rates', methods=['GET'])
