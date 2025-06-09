@@ -189,6 +189,13 @@ function loadFavorites() {
             setTimeout(() => {
                 updateButton.textContent = 'Convert Now';
             }, 1000);
+            populateCurrencySelects()
+            // handleConversion()
+    // const converterForm = document.getElementById('converter-form');
+
+    // converterForm.addEventListener('submit', handleConversion);
+
+            // fetchConversion()
         });
         
         // "Delete" button

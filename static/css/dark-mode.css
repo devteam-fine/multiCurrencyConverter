@@ -58,7 +58,10 @@ h2{
 #result-container {
     background-color: #252525;
 }
-
+.card-text:last-child {
+    margin-bottom: 15px;
+    color: rgb(100, 219, 100);
+}
 /* Dropdown styles */
 .dropdown-menu {
     background-color: #252525;
@@ -82,4 +85,12 @@ footer.bg-light {
 /* Chart adjustments */
 #rates-chart {
     color: #e0e0e0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color:white;
+}
+span{
+    color:white;
 }

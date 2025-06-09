@@ -8,3 +8,126 @@ background: linear-gradient(96deg, #8bc3eb, #949be2);
     color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+    .nav{
+    background-color:black;
+    color: black;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: add shadow */
+}
+.logo{
+    height: 1.5rem;
+}
+.favorite-and-darkLight-mode-container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.fa-bookmark{
+    font-size: x-large;
+    cursor: pointer;
+    color: #493fd6;
+    
+    /* border:2px solid rgb(216, 119, 119) ; */
+    
+}
+.fa-bookmark:hover{
+    color: rgb(54, 54, 53);
+    transition: all ease 0.5s;
+}
+
+    .favorite-and-darkLight-mode-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .fa-bookmark, .fa-moon {
+      font-size: 1.5rem;
+      color: #493fd6;
+      cursor: pointer;
+    }
+
+    .fa-bookmark:hover, .fa-moon:hover {
+      color: #2d2d8f;
+    }
+
+    /* Hero Section */
+    .hero {
+      background:#121212;
+      height: 100vh;
+      padding-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #f1f1f1;
+    }
+
+    .btn-light {
+      background-color: white;
+      color: #493fd6;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-light:hover {
+      background-color: #ececec;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 4rem 0;
+    }
+
+    .features .text-purple {
+      color: #493fd6;
+    }
+
+    .features h5 {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .features p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f8f9fa;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 1rem 0;
+    }
+
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f2fc;
+      color: #333;
+      padding-top: 80px;
+    }
+  

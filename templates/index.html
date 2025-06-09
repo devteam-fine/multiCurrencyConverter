@@ -10,21 +10,23 @@
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     <!-- <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"> -->
 
-    <link id="theme-style" href="{{ url_for('static', filename='css/light-mode.css') }}" rel="stylesheet">
+    <link id="theme-style" href="{{ url_for('static', filename='css/dark-mode.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Add fixed-top class to the header -->
     <header class="nav text-white p-3 fixed-top">
         <div class="nav-container container d-flex justify-content-between align-items-center">
-            <img class="logo" id="logo" src="../static/img/Fine.png" alt="">
+            <img class="logo" id="logo" src="../static/img/logoNew.png" alt="">
             <div class="favorite-and-darkLight-mode-container">
+                
+                </a>
                 <a href="/favorite">
                     <i class="fa-solid fa-bookmark"></i>
                 </a>
-                <button id="theme-toggle" class="button btn btn-sm btn-outline-light">
+                <!-- <button id="theme-toggle" class="button btn btn-sm btn-outline-light">
                     <i class="fas fa-moon"></i> 
-                </button>
+                </button> -->
             </div>
         </div>
     </header>
@@ -122,23 +124,7 @@
             </div>
         </div>
         
-        <div class="row mt-4">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="h5 mb-0">Favorite Conversions</h2>
-                    </div>
-                    <div class="card-body">
-                        <div id="favorites-container">
-                            <p class="text-muted" id="no-favorites">You haven't saved any favorite conversions yet.</p>
-                            <div class="row" id="favorites-list">
-                                 <!-- Will be populated with JavaScript  -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </main>
     
     <footer class="bg-light py-3 mt-4">
@@ -153,6 +139,6 @@
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script src="{{ url_for('static', filename='js/converter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/favorites.js') }}"></script> -->
 </body>
 </html>
