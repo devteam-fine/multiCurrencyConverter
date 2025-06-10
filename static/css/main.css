@@ -144,7 +144,20 @@ body {
       font-size: 16px;
       text-decoration: none;
       transition: background-color 0.3s ease, coloe 0.3s ease;
-      margin-left: 120px;
+      margin-left: 22rem;
+    }
+    .next-btn{
+      display: inline-block;
+      margin: 20px;
+      padding: 8px 16px;
+      background-color: #1e1e2f;
+      color: white;
+      border: 1px solid #00bfff;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, coloe 0.3s ease;
+      /* margin-left: 0rem; */
     }
 /* Responsive adjustments */
 @media (max-width: 767px) {

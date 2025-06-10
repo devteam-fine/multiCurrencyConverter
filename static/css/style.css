@@ -112,7 +112,7 @@ background: linear-gradient(96deg, #8bc3eb, #949be2);
       color: #666;
       padding: 1rem 0;
     }
-
+    
     
     @media (max-width: 768px) {
       .hero h1 {
@@ -124,6 +124,7 @@ background: linear-gradient(96deg, #8bc3eb, #949be2);
       }
     }
     body {
+      
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f1f2fc;
