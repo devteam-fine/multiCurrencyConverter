@@ -180,6 +180,11 @@ function loadFavorites() {
             document.getElementById('from-currency').value = fromCurrency;
             document.getElementById('to-currency').value = toCurrency;
             document.getElementById('converter-form').dispatchEvent(new Event('submit'));
+
+            // show currency conversion field
+            document.getElementById("popBox").classList.remove("hidden")
+            document.getElementById("popBox").classList.add("flex")
+
             
             // Scroll to top of page
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -341,3 +346,8 @@ function clearAllFavorites() {
         loadFavorites();
     }
 }
+
+document.getElementById("closePopup").addEventListener('click', ()=>{
+    document.getElementById("popBox").classList.add("hidden")
+            document.getElementById("popBox").classList.remove("flex")
+})

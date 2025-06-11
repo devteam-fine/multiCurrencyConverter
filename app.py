@@ -103,6 +103,7 @@ def convert_currency():
         response.raise_for_status()
         
         data = response.json()
+        print(data)
         
         # Ensure the response contains the expected fields
         if 'result' in data and data['result'] == 'success':
