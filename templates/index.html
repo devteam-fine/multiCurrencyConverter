@@ -31,11 +31,21 @@
         </div>
     </header>
     
-       <a href="/"class ="back-btn">Back</a>
-       <a href="/favorite"class ="next-btn">Next</a>
+    <a href="/"class ="back-btn">Back</a>
+    <!-- <a href="/favorite"class ="next-btn">Next</a> -->
     <main class="container my-4">
+        <div class="col-md-20 mh1 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h2 class="h5 mb-0">Historical Rates (7 Days)</h2>
+                </div>
+                <div class="card-body">
+                    <canvas id="rates-chart" height="100"></canvas>
+                 </div>
+            <!--</div>
+        </div> -->
         <div class="row">
-            <div class="col-md-6 mb-4">
+            <div class="col-md-10 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-header bg-light">
                         <h2 class="h5 mb-0">Convert Currency</h2>
@@ -90,20 +100,14 @@
                 </div>
             </div>
             
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="h5 mb-0">Historical Rates (7 Days)</h2>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="rates-chart" height="250"></canvas>
-                    </div>
-                </div>
-            </div>
         </div>
+        </div>
+            </div>
+        <!-- </div> -->
+        <!-- </div> -->
         
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-10 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-header bg-light d-flex justify-content-between align-items-center">
                         <h2 class="h5 mb-0">Popular Currency Rates</h2>

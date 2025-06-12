@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event Listeners
     converterForm.addEventListener('submit', handleConversion);
+    // amountInput.addEventListener('change', handleConversion)
+    // toCurrencySelect.addEventListener('change', handleConversion)
+    // fromCurrencySelect.addEventListener('change', handleConversion)
     swapButton.addEventListener('click', swapCurrencies);
     saveFavoriteButton.addEventListener('click', saveCurrentAsFavorite);
 
