@@ -168,7 +168,31 @@ body {
     #swap-button {
         margin-bottom: 1rem;
     }
+    .back-btn{
+        margin-left: 22px;
+    }
+    .favorite-section {
+    margin: 13px auto;
 }
+}
+@media (min-width: 600px) {
+    .back-btn{
+        margin-left: 41px;
+    }
+     .favorite-section {
+    margin: 23px auto;
+    padding: 2px 43px;
+}
+}
+@media (min-width: 900px) {
+    .back-btn{
+        margin-left: 52px;
+    }
+    .favorite-section {
+    margin: 23px auto;
+    padding: 2px 43px;
+}
+} 
 
 /* Animation for result display */
 #result-container {
