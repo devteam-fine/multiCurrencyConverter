@@ -60,6 +60,7 @@ background: linear-gradient(96deg, #8bc3eb, #949be2);
       align-items: center;
       justify-content: center;
       text-align: center;
+      margin-top: -33px;
     }
 
     .hero h1 {

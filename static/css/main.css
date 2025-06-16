@@ -186,11 +186,11 @@ body {
 }
 @media (min-width: 900px) {
     .back-btn{
-        margin-left: 52px;
+        margin-left: 111px;
     }
     .favorite-section {
     margin: 23px auto;
-    padding: 2px 43px;
+    padding: 2px 0px;
 }
 } 
 
