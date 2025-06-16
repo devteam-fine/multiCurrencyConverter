@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     loadFavorites();
+
+    const swapButton = document.getElementById('swap-button');
+    swapButton.addEventListener('click', swapCurrencies);
+
+
     
     const saveFavoriteButton = document.getElementById('save-favorite');
     if (saveFavoriteButton) {
@@ -242,6 +247,8 @@ function fetchConversion(amount, fromCurrency, toCurrency) {
         });
 }
     function swapCurrencies() {
+        const fromCurrencySelect = document.getElementById('from-currency');
+        const toCurrencySelect = document.getElementById('to-currency');
         const temp = fromCurrencySelect.value;
         fromCurrencySelect.value = toCurrencySelect.value;
         toCurrencySelect.value = temp;

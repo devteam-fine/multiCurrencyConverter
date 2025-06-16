@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadPopularRates(currency.code);
             });
             li.appendChild(a);
-            // baseCurrencyDropdown.appendChild(li);
+            baseCurrencyDropdown.appendChild(li);
         });
     }
     
