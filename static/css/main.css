@@ -104,7 +104,7 @@ body {
 
 #result-container {
     background-color: #f8f9fa;
-    border-left: 4px solid #0d6efd;
+    /* border-left: 4px solid #0d6efd; */
 }
 
 .form-control:focus, .form-select:focus {
