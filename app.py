@@ -1,3 +1,5 @@
+
+
 from flask import Flask, render_template, request, jsonify
 import requests
 import json
@@ -11,9 +13,19 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Home page route
-@app.route('/')
+@app.route('/Dashboard')
 def index():
     return render_template('index.html')
+
+@app.route('/favorite')
+def favorite():
+    return render_template('favorite.html')
+
+@app.route('/')
+def frontpage():
+    return render_template('frontpage.html')
+
+
 
 # API endpoint to fetch current exchange rates
 @app.route('/api/rates', methods=['GET'])
@@ -91,6 +103,7 @@ def convert_currency():
         response.raise_for_status()
         
         data = response.json()
+        print(data)
         
         # Ensure the response contains the expected fields
         if 'result' in data and data['result'] == 'success':

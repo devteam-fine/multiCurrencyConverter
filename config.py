@@ -1,7 +1,8 @@
 import os
 
 # ExchangeRate-API configuration
-API_KEY = os.environ.get('EXCHANGE_RATE_API_KEY', '5885d6a81523b9403d3bcd1a')
+API_KEY = os.environ.get('EXCHANGE_RATE_API_KEY',"1a2816a9fed87e9381877449" )
+# '5885d6a81523b9403d3bcd1a'
 BASE_URL = 'https://v6.exchangerate-api.com/v6/{}/'.format(API_KEY)
 
 # Application configuration

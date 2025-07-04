@@ -58,7 +58,10 @@ h2{
 #result-container {
     background-color: #252525;
 }
-
+.card-text:last-child {
+    margin-bottom: 15px;
+    color: rgb(100, 219, 100);
+}
 /* Dropdown styles */
 .dropdown-menu {
     background-color: #252525;
@@ -82,4 +85,33 @@ footer.bg-light {
 /* Chart adjustments */
 #rates-chart {
     color: #e0e0e0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color:white;
+}
+span{
+    color:white;
+}
+
+/* popup section */
+.hidden{
+    display: none;
+   
+}
+.flex{
+    display: flex;
+}
+.popupBackground{
+    height: 100vh;
+    width: 100%;
+    background-color:#121212;
+    position: absolute;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+   
 }

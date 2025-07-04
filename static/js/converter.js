@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     populateBaseCurrencyDropdown();
     loadPopularRates('USD');
     initializeCharts();
-    loadFavorites();
+    // loadFavorites();
     
     // Set default values
     fromCurrencySelect.value = 'USD';
@@ -53,9 +53,90 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event Listeners
     converterForm.addEventListener('submit', handleConversion);
+    // amountInput.addEventListener('change', handleConversion)
+    // toCurrencySelect.addEventListener('change', handleConversion)
+    // fromCurrencySelect.addEventListener('change', handleConversion)
     swapButton.addEventListener('click', swapCurrencies);
     saveFavoriteButton.addEventListener('click', saveCurrentAsFavorite);
-    themeToggle.addEventListener('click', toggleTheme);
+
+
+
+    // Saved into the favorite coverted card
+    function saveCurrentAsFavorite() {
+    const amount = document.getElementById('amount').value;
+    const fromCurrency = document.getElementById('from-currency').value;
+    const toCurrency = document.getElementById('to-currency').value;
+    
+    // Input validation
+    if (!amount || isNaN(amount) || amount <= 0) {
+        return;
+    }
+    
+    // Create favorite object
+    const favorite = {
+        id: Date.now(), // Use timestamp as unique ID
+        amount: parseFloat(amount),
+        fromCurrency,
+        toCurrency,
+        dateAdded: new Date().toISOString()
+    };
+    
+    // Get existing favorites from localStorage
+    let favorites = JSON.parse(localStorage.getItem('currencyFavorites') || '[]');
+    
+    // Check if this conversion is already saved
+    const isDuplicate = favorites.some(fav => 
+        fav.fromCurrency === fromCurrency && 
+        fav.toCurrency === toCurrency
+    );
+    
+    if (!isDuplicate) {
+        // Add new favorite
+        favorites.push(favorite);
+        
+        // Limit to 10 favorites maximum (remove oldest if needed)
+        if (favorites.length > 10) {
+            favorites.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+            favorites = favorites.slice(-10);
+        }
+        
+        // Save back to localStorage
+        localStorage.setItem('currencyFavorites', JSON.stringify(favorites));
+        
+        // Update favorites display
+        // loadFavorites();
+        
+        // Change button to indicate success
+        const saveButton = document.getElementById('save-favorite');
+        saveButton.innerHTML = '<i class="fas fa-check"></i> Saved';
+        saveButton.classList.remove('btn-outline-primary');
+        saveButton.classList.add('btn-success');
+        
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            saveButton.innerHTML = '<i class="far fa-star"></i> Save as Favorite';
+            saveButton.classList.remove('btn-success');
+            saveButton.classList.add('btn-outline-primary');
+        }, 2000);
+    } else {
+        // Visual feedback for duplicate
+        const saveButton = document.getElementById('save-favorite');
+        saveButton.innerHTML = '<i class="fas fa-info-circle"></i> Already Saved';
+        saveButton.classList.remove('btn-outline-primary');
+        saveButton.classList.add('btn-warning');
+        
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            saveButton.innerHTML = '<i class="far fa-star"></i> Save as Favorite';
+            saveButton.classList.remove('btn-warning');
+            saveButton.classList.add('btn-outline-primary');
+        }, 2000);
+    }
+}
+
+
+
+    // themeToggle.addEventListener('click', toggleTheme);
     
     // Add event listeners for currency changes to update chart automatically
     fromCurrencySelect.addEventListener('change', updateChartFromSelects);
@@ -252,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cardBody.classList.add('card-body', 'text-center', 'card-body-container');
             
             const currencyTitle = document.createElement('h5');
-            currencyTitle.classList.add('card-title');
+            currencyTitle.classList.add('card-title', 'card-title-white');
             currencyTitle.textContent = currency.code;
             
             const currencyName = document.createElement('p');
@@ -286,22 +367,22 @@ document.addEventListener('DOMContentLoaded', function() {
         resultContainer.classList.add('d-none');
     }
     //  Dark mode light mode
-    function toggleTheme() {
-        const themeStyle = document.getElementById('theme-style');
-        const isDarkMode = themeStyle.getAttribute('href').includes('dark-mode');
-        const logo = document.getElementById('logo')
+    // function toggleTheme() {
+    //     const themeStyle = document.getElementById('theme-style');
+    //     const isDarkMode = themeStyle.getAttribute('href').includes('dark-mode');
+    //     const logo = document.getElementById('logo')
         
         
-        if (isDarkMode) {
-            themeStyle.setAttribute('href', '/static/css/light-mode.css');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i> ';
-            logo.setAttribute('src','/static/img/Fine.png')
-        } else {
-            themeStyle.setAttribute('href', '/static/css/dark-mode.css');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i> ';
-            logo.setAttribute('src','/static/img/logoNew.png')
-        }
-    }
+    //     if (isDarkMode) {
+    //         themeStyle.setAttribute('href', '/static/css/light-mode.css');
+    //         themeToggle.innerHTML = '<i class="fas fa-moon"></i> ';
+    //         logo.setAttribute('src','/static/img/Fine.png')
+    //     } else {
+    //         themeStyle.setAttribute('href', '/static/css/dark-mode.css');
+    //         themeToggle.innerHTML = '<i class="fas fa-sun"></i> ';
+    //         logo.setAttribute('src','/static/img/logoNew.png')
+    //     }
+    // }
     
     // Initial chart update with default values
     updateChart(fromCurrencySelect.value, toCurrencySelect.value);
